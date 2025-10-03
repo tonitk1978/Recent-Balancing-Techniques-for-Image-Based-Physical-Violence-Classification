@@ -41,6 +41,7 @@ class DCGANGenerator:
     
 
     def generateImages(self,numSamples=1,imageInputPath="./input",epocas=1,imageOutputPath="./imagenes_sinteticas",lote=16):
+        imageInputPath=imageInputPath+"violencia"
         self.BATCH_SIZE=lote
         self.EPOCHS=epocas
         train_data = utils.image_dataset_from_directory(
@@ -268,7 +269,7 @@ class DCGANGenerator:
                 generated_images = generated_images.numpy()
                 display(
                     generated_images,
-                    #save_to="./output/generated_img_%03d.png" % (epoch),
+                    save_to="./output/generated_img_%03d.png" % (epoch),
                 )
 
 
